@@ -26,7 +26,7 @@
   :bug-tracker "https://github.com/guicho271828/cl-sat.glucose/issues"
   :source-control (:git "https://github.com/guicho271828/cl-sat.glucose.git")
   :license "LLGPL"
-  :depends-on (:trivia :alexandria :iterate :cl-sat)
+  :depends-on (:trivia :alexandria :iterate :cl-sat :cl-sat.glucose.build)
   :components ((:module "src"
                 :components
                 ((:file "package"))))
