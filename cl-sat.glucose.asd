@@ -30,5 +30,5 @@
   :components ((:module "src"
                 :components
                 ((:file "package"))))
-  :description "CL-SAT instance to Glucose state-of-the-art SAT solver. This downloads the later 2014 version (2nd in the competition)."
+  :description "CL-SAT instance to Glucose state-of-the-art SAT solver. This downloads the later 2014 version (2nd in the 2014 SAT competition)."
   :in-order-to ((test-op (test-op :cl-sat.glucose.test))))
