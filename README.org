@@ -7,13 +7,14 @@ This downloads the later 2014 version (2nd in the competition).
 
 See also: https://github.com/guicho271828/cl-sat 
 
-```cl
-(cl-sat:solve '(and (or a b) (or a !b c)) :glucose)
-->
-(C A)
-T
-T
-```
+
+#+BEGIN_SRC lisp
+  (cl-sat:solve '(and (or a b) (or a !b c)) :glucose)
+  ;; ->
+  ;; (C A)
+  ;; T
+  ;; T
+#+END_SRC
 
 ** Dependencies
 
