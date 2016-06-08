@@ -4,7 +4,8 @@
 |#
 
 #|
-  CL-SAT instance to Glucose state-of-the-art SAT solver. 3.0 is the winner of SAT competition 2013, but this downloads the later 2014 version (2nd in the competition).
+  CL-SAT instance to Glucose state-of-the-art SAT solver.
+  This downloads the later 2014 version (2nd in the competition).
 
   Author: Masataro Asai (guicho2.71828@gmail.com)
 |#
@@ -29,5 +30,5 @@
   :components ((:module "src"
                 :components
                 ((:file "package"))))
-  :description "CL-SAT instance to Glucose state-of-the-art SAT solver. 3.0 is the winner of SAT competition 2013, but this downloads the later 2014 version (2nd in the competition)."
+  :description "CL-SAT instance to Glucose state-of-the-art SAT solver. This downloads the later 2014 version (2nd in the competition)."
   :in-order-to ((test-op (test-op :cl-sat.glucose.test))))

@@ -1,10 +1,14 @@
 
-* Cl-Sat.Glucose  - CL-SAT instance to Glucose state-of-the-art SAT solver. 3.0 is the winner of SAT competition 2013, but this downloads the later 2014 version (2nd in the competition).
+* Cl-Sat.Glucose  - CL-SAT instance to Glucose state-of-the-art SAT solver.
+
+This downloads the later 2014 version (2nd in the competition).
 
 ** Usage
 
 ** Dependencies
 
+Requires cURL and Make to download & build the binary.
+   
 This library is at least tested on implementation listed below:
 
 + SBCL 1.3.5 on X86-64 Linux  3.19.0-59-generic (author's environment)
