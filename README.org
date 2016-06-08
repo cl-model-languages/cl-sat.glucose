@@ -5,6 +5,16 @@ This downloads the later 2014 version (2nd in the competition).
 
 ** Usage
 
+See also: https://github.com/guicho271828/cl-sat 
+
+```cl
+(cl-sat:solve '(and (or a b) (or a !b c)) :glucose)
+->
+(C A)
+T
+T
+```
+
 ** Dependencies
 
 Requires cURL and Make to download & build the binary.
