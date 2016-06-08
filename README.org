@@ -1,7 +1,7 @@
 
 * Cl-Sat.Glucose  - CL-SAT instance to Glucose state-of-the-art SAT solver.
 
-This downloads the later 2014 version (2nd in the competition).
+This downloads the later 2014 version (2nd in the competition) from http://www.labri.fr/perso/lsimon/glucose/.
 
 ** Usage
 
