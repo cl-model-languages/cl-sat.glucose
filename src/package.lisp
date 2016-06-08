@@ -15,7 +15,7 @@
 (defun glucose-binary (&optional (*glucose-home* *glucose-home*))
   (merge-pathnames "simp/glucose_static" *glucose-home*))
 
-(defmethod solve ((input pathname) (solver (eql :glucose)) &rest options &key &allow-other-keys)
+(defmethod solve ((input pathname) (solver (eql :glucose)) &rest options)
   (with-temp (dir :directory t :template "glucose.XXXXXXXX")
     (let* ((command (format nil "cd ~a; ~a ~{~A~^ ~}~a ~a"
                             (namestring dir)
