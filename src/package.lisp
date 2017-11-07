@@ -10,7 +10,7 @@
 
 ;; blah blah blah.
 
-(defvar *glucose-home* (asdf:system-relative-pathname :cl-sat.glucose.build "glucose-syrup/"))
+(defvar *glucose-home* (asdf:system-relative-pathname :cl-sat.glucose "glucose-syrup/"))
 
 (defun glucose-binary (&optional (*glucose-home* *glucose-home*))
   (merge-pathnames "simp/glucose_static" *glucose-home*))

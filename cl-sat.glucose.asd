@@ -26,9 +26,17 @@
   :bug-tracker "https://github.com/guicho271828/cl-sat.glucose/issues"
   :source-control (:git "https://github.com/guicho271828/cl-sat.glucose.git")
   :license "LLGPL"
-  :depends-on (:trivia :alexandria :iterate :cl-sat :cl-sat.glucose.build)
+  :depends-on (:trivia :alexandria :iterate :cl-sat)
   :components ((:module "src"
                 :components
                 ((:file "package"))))
   :description "CL-SAT instance to Glucose state-of-the-art SAT solver. This downloads the later 2014 version (2nd in the 2014 SAT competition)."
-  :in-order-to ((test-op (test-op :cl-sat.glucose.test))))
+  :in-order-to ((test-op (test-op :cl-sat.glucose.test)))
+  :defsystem-depends-on (:trivial-package-manager)
+  :perform
+  (load-op :before (op c)
+           (uiop:symbol-call :trivial-package-manager
+                             :ensure-program
+                             "glucose"
+                             :from-source (format nil "make -C ~a"
+                                                  (asdf:system-source-directory :cl-sat.glucose)))))
