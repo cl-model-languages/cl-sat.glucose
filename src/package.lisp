@@ -15,8 +15,8 @@
 (defun glucose-binary (&optional (*glucose-home* *glucose-home*))
   (merge-pathnames "simp/glucose_static" *glucose-home*))
 
-(defmethod solve ((input pathname) (solver (eql :glucose)) &rest options)
-  (with-temp (dir :directory t :template "glucose.XXXXXXXX")
+(defmethod solve ((input pathname) (solver (eql :glucose)) &optional debug &rest options)
+  (with-temp (dir :directory t :template "glucose.XXXXXXXX" :debug debug)
     (let* ((command (format nil "cd ~a; ~a ~{~A~^ ~}~a ~a"
                             (namestring dir)
                             (namestring (glucose-binary))
@@ -28,14 +28,8 @@
          (values nil nil nil))
         ((_ _ 10)
          ;; sat
-         (ematch (iter (for token in-file (format nil "~a/result" dir))
-                       (collect token))
-           (assignments
-            (values
-             (iter (for v in (sat-instance-variables *instance*))
-                   (for a in assignments)
-                   (when (plusp a) (collect v)))
-             t t))))
+         (values (parse-dimacs-output (format nil "~a/result" dir))
+                 t t))
         ((_ _ 20)
          ;; unsat
          (values nil nil t))))))
