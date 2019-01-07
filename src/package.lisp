@@ -28,14 +28,7 @@
          (values nil nil nil))
         ((_ _ 10)
          ;; sat
-         (ematch (iter (for token in-file (format nil "~a/result" dir))
-                       (collect token))
-           (assignments
-            (values
-             (iter (for v in (sat-instance-variables *instance*))
-                   (for a in assignments)
-                   (when (plusp a) (collect v)))
-             t t))))
+         (values (parse-dmacs-output (format nil "~a/result" dir) *instance*) t t))
         ((_ _ 20)
          ;; unsat
          (values nil nil t))))))
