@@ -20,10 +20,10 @@
 ;; run test with (run! test-name) 
 
 (test cl-sat.glucose
-  (is-true (nth-value 1 (solve '(and a b c) :glucose)))
-  (is-true (nth-value 1 (solve '(or a b c) :glucose)))
-  (is-true (nth-value 1 (solve '(and (or a !b c) d) :glucose)))
-  (is-true (nth-value 1 (solve '(and (and (and a))) :glucose)))
-  (is-true (nth-value 1 (solve '(not (and a b)) :glucose)))
-  (is-true (nth-value 1 (solve '(not (or a b)) :glucose)))
-  (is-false (nth-value 1 (solve '(and a !a) :glucose))))
+  (is-true (nth-value 1 (solve '(and a b c) :glucose :debug t)))
+  (is-true (nth-value 1 (solve '(or a b c) :glucose :debug t)))
+  (is-true (nth-value 1 (solve '(and (or a !b c) d) :glucose :debug t)))
+  (is-true (nth-value 1 (solve '(and (and (and a))) :glucose :debug t)))
+  (is-true (nth-value 1 (solve '(not (and a b)) :glucose :debug t)))
+  (is-true (nth-value 1 (solve '(not (or a b)) :glucose :debug t)))
+  (is-false (nth-value 1 (solve '(and a !a) :glucose :debug t))))
