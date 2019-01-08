@@ -16,6 +16,7 @@
   (merge-pathnames "simp/glucose_static" *glucose-home*))
 
 (defmethod solve ((input pathname) (solver (eql :glucose)) &rest options &key debug)
+  (remf options :debug)
   (with-temp (dir :directory t :template "glucose.XXXXXXXX" :debug debug)
     (let* ((command (format nil "cd ~a; ~a ~{~A~^ ~}~a ~a"
                             (namestring dir)
