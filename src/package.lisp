@@ -28,7 +28,7 @@
          (values nil nil nil))
         ((_ _ 10)
          ;; sat
-         (values (parse-dmacs-output (format nil "~a/result" dir) *instance*) t t))
+         (parse-dimacs-output (format nil "~a/result" dir) *instance*))
         ((_ _ 20)
          ;; unsat
          (values nil nil t))))))
