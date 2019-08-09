@@ -1,5 +1,7 @@
 
-* Cl-Sat.Glucose  - CL-SAT instance to Glucose state-of-the-art SAT solver.
+* Cl-Sat.Glucose
+
+CL-SAT instance to Glucose state-of-the-art SAT solver.
 
 See [[https://github.com/guicho271828/cl-sat][cl-sat]] for details.
 
