@@ -31,6 +31,8 @@ matrix:
 
 install:
   - curl -L https://raw.githubusercontent.com/snmsts/roswell/release/scripts/install-for-ci.sh | sh
+  - ros install guicho271828/trivial-package-manager
+  - ros install guicho271828/cl-sat
 
 cache:
   directories:
