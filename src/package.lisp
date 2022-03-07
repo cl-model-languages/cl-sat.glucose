@@ -22,14 +22,14 @@
                             (namestring dir)
                             (namestring (glucose-binary))
                             options (namestring input) "result")))
-      (format t "~&; ~a" command)
+      (format t "~&; ~a~%" command)
       (multiple-value-match (uiop:run-program command :output *standard-output* :error-output *error-output* :ignore-error-status t)
         ((_ _ 0)
          ;; indeterminite
          (values nil nil nil))
         ((_ _ 10)
          ;; sat
-         (parse-dimacs-output (format nil "~a/result" dir) *instance*))
+         (parse-assignments (format nil "~a/result" dir) *instance*))
         ((_ _ 20)
          ;; unsat
          (values nil nil t))))))
